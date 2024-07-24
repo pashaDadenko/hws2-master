@@ -15,7 +15,7 @@ type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
 const SuperRadio: React.FC<SuperRadioPropsType> = ({ id, name, className, options, value, onChange, onChangeOption, spanProps, ...restProps }) => {
 	const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
 		if (onChangeOption) {
-			onChangeOption(e.currentTarget.value);
+			onChangeOption(Number(e.currentTarget.value));
 		}
 	};
 
