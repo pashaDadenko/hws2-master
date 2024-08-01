@@ -33,8 +33,19 @@ function Clock() {
 	const onMouseEnter = () => setShow(true);
 	const onMouseLeave = () => setShow(false);
 
-	const stringTime = date.toLocaleTimeString();
-	const stringDate = date.toLocaleDateString('en-GB');
+	const stringTime = date.toLocaleTimeString('ru-RU', {
+		hour: '2-digit',
+		minute: '2-digit',
+		second: '2-digit',
+		hour12: false,
+	});
+
+	const stringDate = date.toLocaleDateString('ru-RU', {
+		day: '2-digit',
+		month: '2-digit',
+		year: 'numeric',
+	});
+
 	const stringDay = date.toLocaleDateString('en-US', { weekday: 'long' });
 	const stringMonth = date.toLocaleDateString('en-US', { month: 'long' });
 
